@@ -41,20 +41,9 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   cd ~/fabric-dev-servers  
   export FABRIC_VERSION=hlfv12  
   ```
-  ___
-  ###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh :  
-  ```
-  sudo chmod 666 /var/run/docker.sock
-  ```
-  ___
+  Not in hyperledger instructions but might be needed to execute downloadFabric.sh :  'sudo chmod 666 /var/run/docker.sock`
   ```
   ./downloadFabric.sh  
-  ```
-  ```
-  cd ~/fabric-dev-servers  
-  export FABRIC_VERSION=hlfv12  
-  ./startFabric.sh  
-  ./createPeerAdminCard.sh
   ```
 #### 4. Create network (https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial)
 + ##### Use yo to generate a buisness network
@@ -88,4 +77,6 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   composer archive create -t dir -n .  
   composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.1.bna  
   composer network start --networkName tutorial-network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+  
+  
   ```
