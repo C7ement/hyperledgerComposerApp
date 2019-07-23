@@ -71,12 +71,11 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ? Do you want to generate an empty template network? No: generate a populated sample network
   ```
 + ##### Replace the network structure by our own one
-  Download the `tutorial-network/` folder in order to replace `models/org.example.biznet.cto`, `lib/logic.js` & `permissions.acl` files and to get the custom-app files.
+  Download the `tutorial-network/` folder in order to replace `models/org.example.biznet.cto`, `lib/logic.js` & `permissions.acl` files and to get the custom-app files:
   
-  In an other folder :
-  ```
-  git clone https://github.com/C7ement/hyperledgerComposerNetwork.git
-
-  ```
-  Copy `tutorial-network/` folder and paste it in `~/fabric-dev-servers/`.
-  When asked to, merge or replace the files and directories.
+    In an other folder :
+    ```
+    git clone https://github.com/C7ement/hyperledgerComposerNetwork.git
+    ```
+    Copy `tutorial-network/` folder and paste it in `~/fabric-dev-servers/`.
+    When asked to, merge or replace the files and directories.
