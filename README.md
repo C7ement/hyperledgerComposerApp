@@ -56,21 +56,16 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ./startFabric.sh  
   ./createPeerAdminCard.sh
   ```
-
-### 4. Create Network:  
-```
-yo hyperledger-composer:businessnetwork
-```
-Welcome to the business network generator
-? Business network name: tutorial-netwo
-rk
-? Description: first network
-? Author name:  clement
-? Author email: clem.labonne@laposte.ne
-t
-? License: Apache-2.0
-? Namespace: org.example.biznet
-? Do you want to generate an empty temp
-late network? No: generate a populated 
-sample network
-
++ ##### Create network (https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial)
+  ```
+  yo hyperledger-composer:businessnetwork
+  
+  Welcome to the business network generator
+  ? Business network name: tutorial-network
+  ? Description: first network
+  ? Author name:  clement
+  ? Author email: clem.labonne@laposte.net
+  ? License: Apache-2.0
+  ? Namespace: org.example.biznet
+  ? Do you want to generate an empty template network? No: generate a populated sample network
+  ```
