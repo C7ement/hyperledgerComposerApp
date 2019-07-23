@@ -11,14 +11,13 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
 3. Install composer:  
 
-..+ Install curl
 (When following instructions from hyperledger website I put the exact commands I used in it has changed) 
 
-..+ Install curl
+  + Install curl
 
         sudo apt-get install curl
 
-⋅⋅* Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
+  + Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
 
         curl -O https://hyperledger.github.io/composer/latest/prereqs-ubuntu.sh  
         chmod u+x prereqs-ubuntu.sh  
@@ -26,7 +25,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
     
 **Close and reopen terminal to apply changes !**
 
-..* Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
+  + Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
   
         npm install -g composer-cli@0.20  
         npm install -g composer-rest-server@0.20  
