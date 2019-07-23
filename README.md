@@ -9,11 +9,13 @@ http://releases.ubuntu.com/16.04/
    At the step "File location and size" choose **15GB or more instead of 10GB** !  
 https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
-3. ### Install composer:  
+### 3. Install composer:  
 
    (When following instructions from hyperledger website I put the exact commands I used in case it has changed) 
 
 + ### Install curl
+
+### + Install curl
 
 ```sudo apt-get install curl```
 
