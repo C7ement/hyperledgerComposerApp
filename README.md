@@ -56,7 +56,8 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ./startFabric.sh  
   ./createPeerAdminCard.sh
   ```
-+ ##### Create network (https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial)
+#### 4. Create network (https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial)
++ ##### Use yo to generate a buisness network
   ```
   yo hyperledger-composer:businessnetwork
   
@@ -69,3 +70,5 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ? Namespace: org.example.biznet
   ? Do you want to generate an empty template network? No: generate a populated sample network
   ```
++ ##### Replace the network structure by our own one
+  Download the tutorial-network/ folder in order to replace models/org.example.biznet.cto, lib/logic.js & permissions.acl files and to download the custom-app.
