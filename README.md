@@ -44,7 +44,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ___  
   ###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh  
   ```
-  sudo chmod 666 /var/run/docker.sock  [comment]: <> (This is a comment, it will not be included)
+  sudo chmod 666 /var/run/docker.sock
   ```  
   ___  
   ```
