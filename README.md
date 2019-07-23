@@ -1,8 +1,8 @@
 INSTRUCTION to stqrt project
 
-1. Download ubuntu 16.04 (tested with virtual box):
+1. Download ubuntu 16.04:
 
-  https://www.osboxes.org/ubuntu/
+  http://releases.ubuntu.com/16.04/
   
 2. Install on Virtual Machine:
 
