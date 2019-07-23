@@ -42,7 +42,7 @@ cd ~/fabric-dev-servers
 export FABRIC_VERSION=hlfv12  
 ```  
 ___  
-   ###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh  
+  ###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh  
   ```
   sudo chmod 666 /var/run/docker.sock  [comment]: <> (This is a comment, it will not be included)
   ```  
