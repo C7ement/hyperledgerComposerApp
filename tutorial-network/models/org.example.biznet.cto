@@ -14,18 +14,3 @@ transaction ScheduleUpdate {
   --> Schedule schedule
   o Double[] newValue
 }
-
-/////////////////////////////////////////
-/*
-
-event TradeNotification {
-    --> Commodity commodity
-}
-
-transaction RemoveHighQuantityCommodities {
-}
-
-event RemoveNotification {
-    --> Commodity commodity
-}
-*/
