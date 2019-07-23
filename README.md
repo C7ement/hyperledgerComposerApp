@@ -2,12 +2,12 @@
 
 #### 1. Download ubuntu 16.04 (ubuntu-16.04.6-desktop-amd64.iso):  
 
-```http://releases.ubuntu.com/16.04/```  
+http://releases.ubuntu.com/16.04/ 
   
 #### 2. Install it on a Virtual Machine:  
 
    At the step "File location and size" choose **15GB or more instead of 10GB** !  
-```https://brb.nci.nih.gov/seqtools/installUbuntu.html```
+https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
 #### 3. Install composer:  
 
@@ -34,6 +34,7 @@ npm install -g generator-hyperledger-composer@0.20
 npm install -g yo  
 npm install -g composer-playground@0.20
 ```  
+***
 ```
 mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers  
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz  
@@ -41,10 +42,11 @@ tar -xvf fabric-dev-servers.tar.gz
 cd ~/fabric-dev-servers  
 export FABRIC_VERSION=hlfv12  
 ```      
-###Not in instruction but might be needed to execute downloadFabric.sh
+###### Not in instruction but might be needed to execute downloadFabric.sh
 ```
 sudo chmod 666 /var/run/docker.sock  
 ```  
+___
 ```
 ./downloadFabric.sh  
 ```  
