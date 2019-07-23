@@ -13,13 +13,13 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
    (When following instructions from hyperledger website I put the exact commands I used in case it has changed) 
 
-   #### + Install curl
+   + #### Install curl
        + Install curl
  3. Install composer:  
     + Install curl  
-**3. Install composer:  
-   **+ Install curl  
-     **+ Install curl  
+**3. Install composer:  **  
+   **+ Install curl   **  
+     **+ Install curl   **  
 
 ```sudo apt-get install curl```
 
