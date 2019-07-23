@@ -1,4 +1,4 @@
-    INSTRUCTION TO START PROJECT
+                                             INSTRUCTION TO START PROJECT
 
 1. Download ubuntu 16.04 (ubuntu-16.04.6-desktop-amd64.iso):
 
