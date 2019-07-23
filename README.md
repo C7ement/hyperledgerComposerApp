@@ -56,3 +56,9 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ./startFabric.sh  
   ./createPeerAdminCard.sh
   ```
+
+### 4. Create Network:  
+```
+yo hyperledger-composer:businessnetwork
+```
+
