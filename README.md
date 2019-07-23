@@ -15,8 +15,11 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
        #### Install curl
        + Install curl
-3. Install composer:  
-   + Install curl
+ 3. Install composer:  
+    + Install curl
+**3. Install composer:  
+   **+ Install curl
+     **+ Install curl
 
 ```sudo apt-get install curl```
 
