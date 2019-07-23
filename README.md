@@ -15,7 +15,8 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
 + ### Install curl
 
-### + Install curl
+### +. Install curl
+###+ Install curl
 
 ```sudo apt-get install curl```
 
