@@ -40,9 +40,9 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
           export FABRIC_VERSION=hlfv12  
          
 ###Not in instruction but might be needed to execute downloadFabric.sh
-'''
+```
 sudo chmod 666 /var/run/docker.sock  
-'''
+```
 
           ./downloadFabric.sh  
 
