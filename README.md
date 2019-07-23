@@ -12,12 +12,15 @@
 
 3. Install composer:  
 
-    Follow these instruction to too set up environment.  
-    https://hyperledger.github.io/composer/latest/installing/development-tools.html  
+Follow these instruction to too set up environment.  
+https://hyperledger.github.io/composer/latest/installing/installing-prereqs
+
+Follow these instruction to too set up environment.  
+https://hyperledger.github.io/composer/latest/installing/development-tools.html  
+
+These instructions might have change so here are the exact ones I used:  
   
-    These instructions might have change so here are the exact ones I used:  
-  
-    npm install -g composer-cli@0.20  
-    npm install -g composer-rest-server@0.20  
-    npm install -g generator-hyperledger-composer@0.20  
-    npm install -g yo  
+      npm install -g composer-cli@0.20  
+      npm install -g composer-rest-server@0.20  
+      npm install -g generator-hyperledger-composer@0.20  
+      npm install -g yo  
