@@ -40,12 +40,12 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   tar -xvf fabric-dev-servers.tar.gz  
   cd ~/fabric-dev-servers  
   export FABRIC_VERSION=hlfv12  
-  ```  
+  ```
   ___
   ###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh  
   ```
   sudo chmod 666 /var/run/docker.sock
-  ```  
+  ```
   ___
   ```
   ./downloadFabric.sh  
