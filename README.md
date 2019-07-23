@@ -1,4 +1,4 @@
-                                        INSTRUCTION TO START PROJECT
+        INSTRUCTION TO START PROJECT
 
 1. Download ubuntu 16.04 (ubuntu-16.04.6-desktop-amd64.iso):  
 
@@ -17,7 +17,7 @@ Install curl
 
     sudo apt-get install curl
 
-Instruction to too set up environment (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
+Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
 
     curl -O https://hyperledger.github.io/composer/latest/prereqs-ubuntu.sh  
     chmod u+x prereqs-ubuntu.sh  
@@ -25,9 +25,11 @@ Instruction to too set up environment (https://hyperledger.github.io/composer/la
     
 ! Close and reopen terminal to apply changes !
 
-Instruction to too set up environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
+Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
   
     npm install -g composer-cli@0.20  
     npm install -g composer-rest-server@0.20  
     npm install -g generator-hyperledger-composer@0.20  
     npm install -g yo  
+    
+    npm install -g composer-playground@0.20  
