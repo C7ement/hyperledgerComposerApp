@@ -46,8 +46,6 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   cd ~/fabric-dev-servers  
   export FABRIC_VERSION=hlfv12  
   ./downloadFabric.sh  
-  ./startFabric.sh  
-  ./createPeerAdminCard.sh  
   ```
 #### 4. Create network (https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial)
 + ##### Use yo to generate a buisness network
