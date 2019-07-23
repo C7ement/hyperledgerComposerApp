@@ -17,14 +17,14 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
 ```sudo apt-get install curl```
 
-+ #### Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
++ ##### Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
 ```
 curl -O https://hyperledger.github.io/composer/latest/prereqs-ubuntu.sh  
 chmod u+x prereqs-ubuntu.sh  
 ./prereqs-ubuntu.sh  
 ```
     
-###### Close and reopen terminal to apply changes !**
+   ###### Close and reopen terminal to apply changes !
 
 + ##### Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
 ```
@@ -41,11 +41,11 @@ tar -xvf fabric-dev-servers.tar.gz
 cd ~/fabric-dev-servers  
 export FABRIC_VERSION=hlfv12  
 ```  
-___
-###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh
-```
-sudo chmod 666 /var/run/docker.sock  [comment]: <> (This is a comment, it will not be included)
-```  
+___  
+   ###### Not in hyperledger instructions but might be needed to execute downloadFabric.sh  
+  ```
+  sudo chmod 666 /var/run/docker.sock  [comment]: <> (This is a comment, it will not be included)
+  ```  
 ___  
 ```
 ./downloadFabric.sh  
