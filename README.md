@@ -1,21 +1,17 @@
-##
-INSTRUCTION TO START PROJECT
+## INSTRUCTION TO START PROJECT
 
-####
-1. Download ubuntu 16.04 (ubuntu-16.04.6-desktop-amd64.iso):  
+#### 1. Download ubuntu 16.04 (ubuntu-16.04.6-desktop-amd64.iso):  
 
         http://releases.ubuntu.com/16.04/  
   
-####
-2. Install it on a Virtual Machine:  
+#### 2. Install it on a Virtual Machine:  
 
-   At the step "File location and size" choose **15GB or more instead of 10GB** ! 
+   At the step "File location and size" choose **15GB or more instead of 10GB** !  
 https://brb.nci.nih.gov/seqtools/installUbuntu.html  
 
-####
-3. Install composer:  
+#### 3. Install composer:  
 
-   (When following instructions from hyperledger website I put the exact commands I used in it has changed) 
+   (When following instructions from hyperledger website I put the exact commands I used in case it has changed) 
 
    + Install curl
 
