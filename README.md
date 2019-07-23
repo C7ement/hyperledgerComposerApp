@@ -41,7 +41,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   cd ~/fabric-dev-servers  
   export FABRIC_VERSION=hlfv12  
   ```
-  Not in hyperledger instructions but might be needed to execute downloadFabric.sh :  'sudo chmod 666 /var/run/docker.sock`
+  This is not in hyperledger instructions but it might be needed to execute downloadFabric.sh: `sudo chmod 666 /var/run/docker.sock`
   ```
   ./downloadFabric.sh  
   ```
