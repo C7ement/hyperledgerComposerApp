@@ -1,4 +1,4 @@
-#INSTRUCTION TO START PROJECT
+# INSTRUCTION TO START PROJECT
 
 1. Download ubuntu 16.04 (ubuntu-16.04.6-desktop-amd64.iso):  
 
@@ -25,7 +25,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
     
 **Close and reopen terminal to apply changes !**
 
-  + Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
+  ** + Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
   
         npm install -g composer-cli@0.20  
         npm install -g composer-rest-server@0.20  
