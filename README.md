@@ -6,12 +6,11 @@
   
 2. Install it on a Virtual Machine:  
 
-At the step "File location and size" choose **15GB or more instead of 10GB** ! 
+   At the step "File location and size" choose **15GB or more instead of 10GB** ! 
 https://brb.nci.nih.gov/seqtools/installUbuntu.html  
 
 3. Install composer:  
 
-   + Install curl
    (When following instructions from hyperledger website I put the exact commands I used in it has changed) 
 
    + Install curl
@@ -24,7 +23,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
           chmod u+x prereqs-ubuntu.sh  
           ./prereqs-ubuntu.sh  
     
-    **Close and reopen terminal to apply changes !**
+     **Close and reopen terminal to apply changes !**
 
    + Instruction install the development environment (https://hyperledger.github.io/composer/latest/installing/development-tools.html) 
 
