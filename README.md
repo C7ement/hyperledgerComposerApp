@@ -6,7 +6,7 @@ http://releases.ubuntu.com/16.04/
   
 2. Install it on a Virtual Machine:  
 
-**You need more thqn 10GB of memory so at the step "File location and size" choose 15GB instead of 10GB !**  
+At the step "File location and size" choose **15GB or more instead of 10GB** ! 
 https://brb.nci.nih.gov/seqtools/installUbuntu.html  
 
 3. Install composer:  
@@ -17,7 +17,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
 
         sudo apt-get install curl
 
-..* Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
+⋅⋅* Instruction to too install pre-requisites (https://hyperledger.github.io/composer/latest/installing/installing-prereqs) 
 
         curl -O https://hyperledger.github.io/composer/latest/prereqs-ubuntu.sh  
         chmod u+x prereqs-ubuntu.sh  
