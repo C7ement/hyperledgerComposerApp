@@ -34,22 +34,22 @@ npm install -g generator-hyperledger-composer@0.20
 npm install -g yo  
 npm install -g composer-playground@0.20
 ```  
-***
 ```
 mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers  
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz  
 tar -xvf fabric-dev-servers.tar.gz  
 cd ~/fabric-dev-servers  
 export FABRIC_VERSION=hlfv12  
-```      
+```  
+___
 ###### Not in instruction but might be needed to execute downloadFabric.sh
 ```
 sudo chmod 666 /var/run/docker.sock  [comment]: <> (This is a comment, it will not be included)
 ```  
+___  
 ```
 ./downloadFabric.sh  
 ```
-___  
 ```
 cd ~/fabric-dev-servers  
 export FABRIC_VERSION=hlfv12  
