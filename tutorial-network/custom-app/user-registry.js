@@ -1,54 +1,73 @@
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
-const Table = require('cli-table');
 
 let cardname = "admin@tutorial-network";
-
 class UserRegistry {
 
     constructor() {
         this.bizNetworkConnection = new BusinessNetworkConnection();
     }
 
-    async init() {
-        this.businessNetworkDefinition = await this.bizNetworkConnection.connect(cardname);
+    init() {
+        return this.bizNetworkConnection.connect(cardname).then((businessNetworkDefinition) => {
+            this.factory = businessNetworkDefinition.getFactory();
+            return this.bizNetworkConnection.getParticipantRegistry('org.example.biznet.User');
+        }, onRejected).then((userRegistry) => {
+            this.userRegistry = userRegistry;
+            return Promise.resolve();
+        }, onRejected);
     }
 
-    async addUser(userId) {
+    addUser(userId) {
         console.log('Getting user registry.');
-        this.userRegistry = await this.bizNetworkConnection.getParticipantRegistry('org.example.biznet.User');
-        let factory = this.businessNetworkDefinition.getFactory();
-        let user = factory.newResource('org.example.biznet','User',userId);
-        await this.userRegistry.add(user);
-    }
-
-    async getUser(userId) {
-        console.log('Getting user : '+userId);
-        this.userRegistry = await this.bizNetworkConnection.getParticipantRegistry('org.example.biznet.User');
-        return await this.userRegistry.get(userId);
-    }
-
-    async getUserTable() {
-
-        try {
-            let userRegistry = await this.bizNetworkConnection.getAssetRegistry('org.example.biznet.User');
-
-            let aResources = await userRegistry.resolveAll();
-            let table = new Table({
-                head: ['UserId']
-            });
-            let arrayLength = aResources.length;
-
-            for (let i = 0; i < arrayLength; i++) {
-
-                let tableLine = [];
-                tableLine.push(aResources[i].userId);
-                table.push(tableLine);
+        return this.userRegistry.exists(userId).then((exist) => {
+            if (exist) {
+                console.log("User already exists. Id: " + userId);
+                return Promise.reject("Err: User already exists. Id: " + userId);
+            } else {
+                let user = this.factory.newResource('org.example.biznet','User',userId);
+                return this.userRegistry.add(user);
             }
-            return table;
-        } catch(error) {
-            console.error("Error getting user table", error);
-        }
+        }, onRejected);
     }
+
+    removeUser(userId) {
+        console.log('Getting user registry.');
+        return this.userRegistry.exists(userId).then((exist) => {
+            if (exist) {
+                return this.userRegistry.remove(userId);
+            } else {
+                console.log('User does not exist.');
+                return Promise.reject("Err: "+userId+" does not exist.");
+            }
+        }, onRejected);
+    }
+
+    removeAllUsers() {
+        console.log('Getting user registry.');
+        return this.userRegistry.getAll().then( (resources) => {
+            return this.userRegistry.removeAll(resources);
+        }, onRejected);
+    }
+
+    getUser(userId) {
+        console.log('Getting user : '+userId);
+        return this.userRegistry.get(userId);
+    }
+
+    getUserTable() {
+        return this.userRegistry.resolveAll().then((resources) => {
+            let table = [];
+            for (let res of resources) {
+                table.push(res.userId);
+            }
+            return Promise.resolve(table);
+        }, onRejected);
+    }
+
+
+}
+function onRejected (err) {
+    console.error('Promise rejected', err);
 }
 
 module.exports = UserRegistry;
