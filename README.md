@@ -100,9 +100,10 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   cd ~/fabric-dev-servers  
   ./teardownFabric.sh
   ./teardownAllDocker.sh
-  1
-  ./tearDownAllDocker.sh
-  2
+  ./teardownAllDocker.sh
+  ```
+  1 then 2
+  ```
   export FABRIC_VERSION=hlfv12  
   ./downloadFabric.sh  
   ./startFabric.sh
