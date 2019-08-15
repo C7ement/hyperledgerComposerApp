@@ -98,8 +98,8 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   Delete tutorial-network@0.0.1.bna & networkadmin.card
   ```
   cd ~/fabric-dev-servers  
-  ./tearDownFabric.sh
-  ./tearDownAllDocker.sh
+  ./teardownFabric.sh
+  ./teardownAllDocker.sh
   1
   ./tearDownAllDocker.sh
   2
