@@ -95,6 +95,7 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ```
     
 #### 5. To redeploy network after structure modification 
+  Delete tutorial-network@0.0.1.bna & networkadmin.card
   ```
   cd ~/fabric-dev-servers  
   export FABRIC_VERSION=hlfv12  
