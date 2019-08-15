@@ -108,10 +108,4 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   composer network start --networkName tutorial-network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card  
   composer-rest-server
   admin@tutorial-network
-  No
-  No
-  No
-
-  Yes
-  No
   ```
