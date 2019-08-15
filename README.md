@@ -92,4 +92,25 @@ https://brb.nci.nih.gov/seqtools/installUbuntu.html
   ? Specify a key if you want to enable dynamic logging: 
   ? Specify if you want to enable event publication over WebSockets: Yes
   ? Specify if you want to enable TLS security for the REST API: No
-    ```
+  ```
+    
+#### 5. To redeploy network after structure modification 
+  ```
+  cd ~/fabric-dev-servers  
+  export FABRIC_VERSION=hlfv12  
+  ./downloadFabric.sh  
+  ./startFabric.sh
+  ./createPeerAdminCard.sh
+  cd ~/fabric-dev-servers/tutorial-network  
+  composer archive create -t dir -n .  
+  composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.1.bna  
+  composer network start --networkName tutorial-network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card  
+  composer-rest-server
+  admin@tutorial-network
+  No
+  No
+  No
+
+  Yes
+  No
+  ```
