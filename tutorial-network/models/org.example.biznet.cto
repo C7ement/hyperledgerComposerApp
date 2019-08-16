@@ -1,16 +1,28 @@
 namespace org.example.biznet
 
-asset Schedule identified by scheduleId {
-  o String scheduleId
-  --> User user
-  o Double[] value
-}
-
 participant User identified by userId {
   o String userId
 }
+participant UtilityCompany identified by utilityCompanyId {
+  o String utilityCompanyId
+}
 
+asset Schedule identified by scheduleId {
+  o String scheduleId
+  --> User user
+  o String date
+  o Double[] value
+  o Double diffrenceWithPreviousSchedule
+  o Double s_endOfDay
+}
 transaction ScheduleUpdate {
   --> Schedule schedule
   o Double[] newValue
+  o Double s_endOfDay
+}
+
+asset AggregatedDemand identified by date {
+  o String date
+  o Double[] value
+  o Integer participantCount
 }
