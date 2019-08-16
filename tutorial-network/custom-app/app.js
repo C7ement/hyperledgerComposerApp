@@ -2,6 +2,7 @@ const BusinessNetworkConnection = require('composer-client').BusinessNetworkConn
 
 const UserRegistry = require('./user-registry');
 const ScheduleRegistry = require('./schedule-registry');
+const AggregatedDemand = require('./aggregated-demand-registry');
 
 ////// Express Server :
 const express = require('express');
@@ -82,19 +83,24 @@ io.on('connection', (socket) => {
     });
     sendUsers();
     sendSchedules();
+    sendAggregatedDemand();
+    sendAllTransactions();
 });
 
 let userRegistry = new UserRegistry();
 let scheduleRegistry = new ScheduleRegistry();
+let aggregatedDemand = new AggregatedDemand();
 
 
-userRegistry.init().then(()=>{
-    return scheduleRegistry.init();
-}, onRejected).then( () => {
-    server.listen(3003, () => {
-        console.log('listening on port 3003');
-    });
-}, onRejected);
+
+Promise.all([userRegistry.init(),
+            scheduleRegistry.init(),
+            aggregatedDemand.init()])
+    .then( () => {
+        server.listen(3003, () => {
+            console.log('listening on port 3003');
+        });
+    }, onRejected);
 
 
 function onRejected (err) {
@@ -112,6 +118,20 @@ function sendUsers() {
     userRegistry.getUserTable()
         .then((table) => {
             io.sockets.emit("update User", table);
+        }, onRejected);
+}
+
+function sendAllTransactions() {
+    aggregatedDemand.getAllAggregatedDemand()
+        .then((table) => {
+            io.sockets.emit("update Aggregated Demand", table);
+        }, onRejected);
+}
+
+function sendAggregatedDemand() {
+    scheduleRegistry.getAllTransactions()
+        .then((table) => {
+            io.sockets.emit("update All Transactions", table);
         }, onRejected);
 }
 

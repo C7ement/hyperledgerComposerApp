@@ -33,23 +33,23 @@ const csvFilePath='./data/day0.csv';
 const csv=require('csvtojson');
 
 
-userRegistry.init().then(()=>{
-    return scheduleRegistry.init();
-}, onRejected)
-    .then( () => {
-        newUser(["User0"]).then(()=>{
-            return newUser(["User1"]).then(()=>{
-                csv({ noheader:true })
-                    .fromFile(csvFilePath)
-                    .then((jsonArray)=>{
-                        for (let i in jsonArray) {
-                            let array = [];
-                            for(let j in jsonArray[i]){
-                                array.push(eval(jsonArray[i][j]));
-                            }
-                            newSchedule(["Schedule"+i,"User"+i%2,""+Math.floor(i/2),array]);
-                        }
-                    }, onRejected);
-            })
-        }, onRejected);
-    });
+
+Promise.all([userRegistry.init(), scheduleRegistry.init()])
+    .then(() => {
+        return newUser(["User0"]);
+    }, onRejected)
+    .then(() => {
+        return newUser(["User1"]);
+    }, onRejected)
+    .then(()=>{
+        return csv({ noheader:true }).fromFile(csvFilePath);
+    }, onRejected)
+    .then((jsonArray)=>{
+        for (let i in jsonArray) {
+            let array = [];
+            for(let j in jsonArray[i]){
+                array.push(eval(jsonArray[i][j]));
+            }
+            newSchedule(["Schedule"+i,"User"+i%2,""+Math.floor(i/2),array]);
+        }
+    }, onRejected);

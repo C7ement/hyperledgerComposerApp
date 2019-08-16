@@ -27,12 +27,14 @@ class ScheduleRegistry{
         return this.scheduleRegistry.exists(scheduleId).then((exist) => {
             if (exist) {
                 console.log("Schedule already exists.");
-                return Promise.rejected("Err: Schedule already exists.");
+                return Promise.reject("Err: Schedule already exists.");
             } else {
                 let schedule = this.factory.newResource('org.example.biznet','Schedule',scheduleId);
                 schedule.user = this.factory.newRelationship('org.example.biznet','User',userId);
                 schedule.value = value;
+                schedule.diffrenceWithPreviousSchedule = Number.MAX_VALUE;
                 schedule.date = date;
+                schedule.s_endOfDay = 0;
                 return this.scheduleRegistry.add(schedule);
             }
         });
@@ -78,22 +80,50 @@ class ScheduleRegistry{
             sched.userId = res.user.userId;
             sched.date = res.date;
             sched.value = res.value;
+            sched.s_endOfDay = res.s_endOfDay;
+            sched.diffrenceWithPreviousSchedule = res.diffrenceWithPreviousSchedule;
             table.data.push(sched);
         }
         return Promise.resolve(table);
     }
 
-    updateSchedule(scheduleId, value) {
+    updateSchedule(scheduleId, value, s) {
         console.log('Getting serializer.');
         let serializer = this.businessNetworkDefinition.getSerializer();
 
         let resource = serializer.fromJSON({
             '$class': 'org.example.biznet.ScheduleUpdate',
             'schedule': scheduleId,
-            'newValue': value
+            'newValue': value,
+            's_endOfDay': s,
         });
 
         return this.bizNetworkConnection.submitTransaction(resource);
+    }
+
+    getAllTransactions() {
+        return this.bizNetworkConnection.getHistorian()
+            .then((historian)=>{
+                return historian.resolveAll();
+            }, onRejected)
+            .then((table)=>{
+                let trTypes = table.map((tr)=>tr.transactionType);
+                trTypes = trTypes.filter( (trType, index, self) => index === self.indexOf(trType));
+                return Promise.all(trTypes.map((trType) => {
+                    return this.bizNetworkConnection.getTransactionRegistry(trType).then((registry)=>{
+                        return registry.resolveAll().then((transctions)=>{
+                            return Promise.resolve(transctions.map((tr)=>{
+                                return {type: trType, data: tr};
+                            }));
+                        }, onRejected);
+                    })
+                }));
+            }, onRejected)
+            .then((trArrays)=>{
+                let allTransactions = [].concat.apply([], trArrays);
+                allTransactions = allTransactions.sort((a,b)=>a.data.timestamp<b.data.timestamp);
+                return Promise.resolve(allTransactions);
+            }, onRejected);
     }
 }
 
